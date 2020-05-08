@@ -1,0 +1,13 @@
+[Unit]
+Description=Ajuste la vitesse des ventilateurs selon la temperature gpu et cpu
+After=network.target
+
+[Service]
+Type=forking
+User=root
+Group=root
+ExecStart=/usr/local/bin/nvidiaFanspeed.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
